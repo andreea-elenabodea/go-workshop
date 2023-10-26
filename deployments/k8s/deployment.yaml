@@ -16,10 +16,29 @@ spec:
         app: quota
     spec:
       imagePullSecrets:
-        - name: harbour-pull-secret
+        - name: harbour-pull-secret1
       containers:
         - name: quota
           imagePullPolicy: Always
           image: harbor.infra.cluster.ionos.com/paasis-dev/wb-group2/team-2:latest
           ports:
             - containerPort: 8080
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: harbor-pull-secret1
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: vault-backend
+  target:
+    template:
+      type: kubernetes.io/dockerconfigjson
+      data:
+        .dockerconfigjson:  "{{ .pullsecret | toString }}"
+    creationPolicy: Owner
+  data:
+    - secretKey: pullsecret
+      remoteRef:
+        key: paasis/data/cluster/paasis-dev/common/harbor-access
