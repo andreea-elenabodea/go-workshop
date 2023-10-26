@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 module tools
+=======
+module something
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
 
 go 1.21
 

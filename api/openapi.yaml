@@ -5,10 +5,16 @@ info:
   description: Fetches aggregated quotas for a given account from the IONOS Cloud API
   version: 0.1.0
 servers:
+<<<<<<< HEAD
   - url: 'http://localhost:3333'
 
 paths:
 
+=======
+  - url: "http://localhost:3333"
+
+paths:
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
   /quotas:
     get:
       description: Fetches aggregated quotas for a given account from the IONOS Cloud API
@@ -16,19 +22,32 @@ paths:
       security:
         - ionos-token: []
       responses:
+<<<<<<< HEAD
         '200':
           $ref: '#/components/responses/Quotas'
         '401':
           $ref: '#/components/responses/Error'
         '500':
           $ref: '#/components/responses/Error'
+=======
+        "200":
+          $ref: "#/components/responses/Quotas"
+        "401":
+          $ref: "#/components/responses/Error"
+        "500":
+          $ref: "#/components/responses/Error"
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
 
   /health:
     get:
       description: Health check
       operationId: getHealth
       responses:
+<<<<<<< HEAD
         '200':
+=======
+        "200":
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
           description: OK
           content:
             text/plain:
@@ -36,8 +55,13 @@ paths:
                 type: string
                 enum:
                   - OK
+<<<<<<< HEAD
         '500':
           $ref: '#/components/responses/Error'
+=======
+        "500":
+          $ref: "#/components/responses/Error"
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
 
 components:
   responses:
@@ -46,7 +70,11 @@ components:
       content:
         application/json:
           schema:
+<<<<<<< HEAD
             $ref: '#/components/schemas/Quotas'
+=======
+            $ref: "#/components/schemas/Quotas"
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
     Error:
       description: API call error
       content:
@@ -68,16 +96,28 @@ components:
           type: object
           properties:
             Usage:
+<<<<<<< HEAD
               $ref: '#/components/schemas/DBaaSQuota'
             Limits:
               $ref: '#/components/schemas/DBaaSQuota'
+=======
+              $ref: "#/components/schemas/DBaaSQuota"
+            Limits:
+              $ref: "#/components/schemas/DBaaSQuota"
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
         DNS:
           type: object
           properties:
             Usage:
+<<<<<<< HEAD
               $ref: '#/components/schemas/DNSQuota'
             Limits:
               $ref: '#/components/schemas/DNSQuota'
+=======
+              $ref: "#/components/schemas/DNSQuota"
+            Limits:
+              $ref: "#/components/schemas/DNSQuota"
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
 
     DBaaSQuota:
       type: object
@@ -109,4 +149,8 @@ components:
           format: int64
         SecondaryZones:
           type: integer
+<<<<<<< HEAD
           format: int64
+=======
+          format: int64
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2

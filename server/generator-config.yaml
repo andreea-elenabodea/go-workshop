@@ -3,4 +3,8 @@ generate:
   chi-server: true
   models: true
   embedded-spec: true
+<<<<<<< HEAD
 output: chi_server.gen.go
+=======
+output: chi_server.gen.go
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2

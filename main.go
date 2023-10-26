@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"workshop_demo/client"
 	"workshop_demo/convert"
 	"workshop_demo/server"
@@ -44,10 +45,16 @@ func (s *ServerImplementation) GetQuotas(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+<<<<<<< HEAD
 	serverResponse := convert.ConvertModels(*dnsResponse, *dbaasQuotas)
 
 	jsonBody, err := json.Marshal(serverResponse)
 
+=======
+	serverResponse := converter.ConvertModels(*dnsResponse, *dbaasQuotas)
+
+	jsonBody, err := json.Marshal(serverResponse)
+>>>>>>> 6e102e20353e89c2decc2ca8a3db0f67b12005d2
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		slog.Error("Error while marshaling response: ", err)
