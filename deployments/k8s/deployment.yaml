@@ -16,7 +16,7 @@ spec:
         app: quota
     spec:
       imagePullSecrets:
-        - name: harbour-pull-secret1
+        - name: harbour-pull-secret2
       containers:
         - name: quota
           imagePullPolicy: Always
