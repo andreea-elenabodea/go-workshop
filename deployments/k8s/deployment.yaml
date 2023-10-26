@@ -15,10 +15,11 @@ spec:
       labels:
         app: quota
     spec:
-      imagePullSecrets: 
-       - name: harbour-pull-secret
+      imagePullSecrets:
+        - name: harbour-pull-secret
       containers:
-      - name: quota
-        image: harbor.infra.cluster.ionos.com/paasis-dev/wb-group2/team-2:latest
-        ports:
-        - containerPort: 8080
+        - name: quota
+          imagePullPolicy: Always
+          image: harbor.infra.cluster.ionos.com/paasis-dev/wb-group2/team-2:latest
+          ports:
+            - containerPort: 8080
